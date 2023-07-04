@@ -20,6 +20,10 @@ Neither the second nor the third generation sequencing technologies directly kee
 
 Of course, in the absence of sequencing errors, haplotype assembly is easy. In this situation, two fragments would conflict if and only if they come from different parents, so we could solve the problem by bipartitioning. But the reality is not so simple.
 
+## tl;dr
+
+Genome sequencing workflows produce contiguous DNA segments of unknown chromosomal origin. <i>De-novo</i> assemblies produce consensus sequences, but the relative haploid phase between variants is undetermined. The <i>haploid assembly problem</i> tries to compute the haplotype sequences for each chromosome: the haplotype phase of variants is inferred from assembling overlapping sequence reads.
+
 ## Haplotype Assembly Methods
 
 #### Minimum Fragment Removal (MFR)
