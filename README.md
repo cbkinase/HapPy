@@ -1,8 +1,8 @@
 # Haplotype Assembler
 
-## Background
+# Background
 
-### What is haplotype assembly?
+## What is haplotype assembly?
 
 <img src="https://i.gyazo.com/1aa1600c775fe41ce48283e7364cfe2a.png">
 
@@ -20,7 +20,7 @@ Neither the second nor the third generation sequencing technologies directly kee
 
 Of course, in the absence of sequencing errors, haplotype assembly is easy. In this situation, two fragments would conflict if and only if they come from different parents, so we could solve the problem by bipartitioning. But the reality is not so simple.
 
-### Haplotype Assembly Methods
+## Haplotype Assembly Methods
 
 #### Minimum Fragment Removal (MFR)
 Treat haplotype assembly as an optimization problem where the goal is to remove the minimum number of fragments so that the remaining fragments can be partitioned into two conflict-free subsets, each representing a haplotype.
