@@ -1,5 +1,3 @@
-# Haplotype Assembler
-
 # Background
 
 ## What is haplotype assembly?
