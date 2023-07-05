@@ -2,7 +2,9 @@
 
 ## What is haplotype assembly?
 
+<div align='center'>
 <img src="https://i.gyazo.com/1aa1600c775fe41ce48283e7364cfe2a.png">
+</div>
 
 In humans, and many other diploid organisms, genes are present in pairs. You get one copy of a gene from your mother, and another copy from your father. Recall that during meiosis, corresponding (homologous) chromosomes pair up and exchange genetic material with each-other. However, because of the nature of this exchange process, genes located close to each-other are less likely to split up. This can result in segments of genetic material that come exclusively from one parent. 
 
@@ -17,6 +19,10 @@ In the third-generation sequencing space, we have PacBio and Oxford Nanopore, wh
 Neither the second nor the third generation sequencing technologies directly keep track of the haplotypic origin of reads: a haplotype assembly algorithm is required for this. Due to the substantive differences between second- and third-generation sequencing technology, it is likely that novel approaches are needed for long-read data.
 
 Of course, in the absence of sequencing errors, haplotype assembly is easy. In this situation, two fragments would conflict if and only if they come from different parents, so we could solve the problem by bipartitioning. But the reality is not so simple.
+
+<div align='center'>
+<img src="https://i.gyazo.com/b517c9c4f02aeb6078923dc8df16a589.png">
+</div>
 
 ## tl;dr
 
