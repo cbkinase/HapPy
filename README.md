@@ -1,6 +1,6 @@
 # Background
 
-## What is haplotype assembly?
+## What is Haplotype Assembly?
 
 <div align='center'>
 <img src="https://i.gyazo.com/1aa1600c775fe41ce48283e7364cfe2a.png">
@@ -37,4 +37,4 @@ Treat haplotype assembly as an optimization problem where the goal is to remove 
 Similar to MFR, but attempts to explain the observed fragments with the least number of haplotypes rather than trying to remove fragments.
 
 #### Minimum Error Correction (MEC)
-This is the most commonly used. In MEC, the goal is to find the two haplotypes that require the smallest number of corrections to the given fragments to eliminate all inconsistencies. MEC is an NP-hard problem, however, and generally requires heuristic solutions.
+The most commonly used. In MEC, the goal is to find the two haplotypes that require the smallest number of corrections to the given fragments to eliminate all inconsistencies. MEC is an NP-hard problem, however, and generally requires heuristic solutions.
