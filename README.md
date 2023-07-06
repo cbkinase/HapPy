@@ -6,11 +6,13 @@
 <img src="https://i.gyazo.com/1aa1600c775fe41ce48283e7364cfe2a.png">
 </div>
 
-In humans, and many other diploid organisms, genes are present in pairs. You get one copy of a gene from your mother, and another copy from your father. Recall that during meiosis, corresponding (homologous) chromosomes pair up and exchange genetic material with each-other. However, because of the nature of this exchange process, genes located close to each-other are less likely to split up. This can result in segments of genetic material that come exclusively from one parent. 
+<br>
 
-This is what is known as a haplotype -- a set of DNA variations (often called polymorphisms) that are inherited together as a unit. This subject is of interest in a number of fields, such as disease research, precision medicine, population genetics, functional genomics, and forensics.
+In humans, and many other diploid organisms, chromosomes are present in pairs. You get one copy of a chromosome from your mother, and another copy from your father. When we sequence a diploid organism's genome, we get a mix of both copies of each chromosome. 
 
-Although the sequence of alleles at single nucleotide polymorphism (SNP) sites can be measured through direct experimentation, the high cost of these methods has made reconstruction by computational approaches the more attractive option.
+However, most sequencing technologies cannot distinguish which sequence comes from the maternal chromosome and which comes from the paternal chromosome. This can be problematic when studying the effects of certain genes or mutations, as their impact can often depend on the specific combination of alleles on both chromosomes (i.e., the haplotype). Haplotype assembly is also of interest in a number of other fields, such as precision medicine, population genetics, and forensics.
+
+Although the sequence of alleles at single nucleotide polymorphism (SNP) sites can be measured through direct experimentation, the high cost of these methods has made reconstruction by computational approaches the more attractive option. This is done by grouping together fragments that likely come from the same parent. This task is complicated by the fact that errors can occur during the sequencing process, leading to mismatches between the fragments and the true haplotypes.
 
 At present, there are two principal sequencing methods in the genomics space: second-generation sequencing and third-generation sequencing. Illumina, the dominant player in the second-generation sequencing space, provides short read sequencing of only up to a few hundred base pairs, but with excellent error rates on reads (estimated to be lower than 0.1%). 
 
@@ -19,6 +21,8 @@ In the third-generation sequencing space, we have PacBio and Oxford Nanopore, wh
 Neither the second nor the third generation sequencing technologies directly keep track of the haplotypic origin of reads: a haplotype assembly algorithm is required for this. Due to the substantive differences between second- and third-generation sequencing technology, it is likely that novel approaches are needed for long-read data.
 
 Of course, in the absence of sequencing errors, haplotype assembly is easy. In this situation, two fragments would conflict if and only if they come from different parents, so we could solve the problem by bipartitioning. But the reality is not so simple.
+
+<br>
 
 <div align='center'>
 <img src="https://i.gyazo.com/b517c9c4f02aeb6078923dc8df16a589.png">
