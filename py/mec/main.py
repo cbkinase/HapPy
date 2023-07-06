@@ -1,29 +1,19 @@
-import numpy as np
+from minimum_cut import create_graph, haplotype_assembly
 
+matrix = [
+    [1, 0, 1, 0, 1],
+    [1, 0, 1, 0, 1],
+    [0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0],
+    [1, 0, 0, 1, 0],
+    [0, 1, 1, 0, 1],
+    [1, 0, 0, 1, 0],
+]
 
-def mec_greedy(matrix):
-    n, m = matrix.shape  # Number of fragments and positions
+graph = create_graph(matrix)
+source, sink = 'source', 'sink'
+haplotype_1, haplotype_2, cut_value = haplotype_assembly(graph, source, sink)
 
-    # Initialize haplotypes with the majority allele at each position
-    haplotype_1 = np.array([np.bincount(matrix[:, j]).argmax() for j in range(m)])
-    haplotype_2 = 1 - haplotype_1  # The other allele
-
-    # Correct the haplotypes greedily
-    for _ in range(n):
-        min_errors = n
-        for j in range(m):
-            # Try flipping the allele at position j in haplotype_1
-            temp = haplotype_1.copy()
-            temp[j] = 1 - temp[j]
-
-            # Calculate the total number of mismatches with the fragments
-            # TODO: optimize here
-            errors = sum(sum(temp != matrix[i]) for i in range(n))
-
-            if errors < min_errors:
-                best_haplotype = temp
-                min_errors = errors
-
-        haplotype_1 = best_haplotype
-
-    return haplotype_1, haplotype_2
+print(f"Haplotype 1: {haplotype_1}")
+print(f"Haplotype 2: {haplotype_2}")
+print(f"Cut Value: {cut_value}")
