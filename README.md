@@ -1,4 +1,5 @@
-# Background
+# HapPy
+Welcome to HapPy – a graph-theoretic algorithm for the genome-wide haplotype assembly of diploid organisms, implemented in Python.
 
 ## What is Haplotype Assembly?
 
