@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 def debruijn_graph_from_kmers(kmers):
     """
     Create a De Bruijn graph from k-mers.
@@ -15,6 +16,7 @@ def debruijn_graph_from_kmers(kmers):
         graph[prefix].append(suffix)
     return graph
 
+
 def eulerian_path(graph):
     """ Find an Eulerian path given a De Bruijn graph """
     start_node = [node for node in graph if len(graph[node]) - len([1 for target in graph if node in graph[target]]) == 1]
@@ -28,10 +30,11 @@ def eulerian_path(graph):
             path.append(stack.pop())
     return ''.join(segment[0] for segment in path[::-1])
 
+
 def assemble_sequence_from_reads(reads, k):
     kmers = [read[i:i+k] for read in reads for i in range(len(read)-k+1)]
     debruijn_graph = debruijn_graph_from_kmers(kmers)
-    # I should account for cases where there are multiple valid eulerian paths
+    # I should account for cases where there are multiple valid Eulerian paths
     # (i.e. there are repeats in the sequence)
     # Should also account for phred quality scores.
     return eulerian_path(debruijn_graph)

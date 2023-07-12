@@ -9,4 +9,6 @@ for read, edges in graph.items():
 
 
 seq = debruijn.assemble_sequence_from_reads(reads, k=3)
+seq_expected = "TACGGTACGACCCCGGGTTTT"
 print(seq)
+assert seq == seq_expected
