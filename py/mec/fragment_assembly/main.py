@@ -1,4 +1,4 @@
-import naive, debruijn
+import naive, debruijn, contig_assembly
 
 reads = ["ACGGTACG", "GTA", "CGTACGTTT", "ACG", "CGT", "ACGACG"]
 graph = naive.create_overlap_graph(reads, min_length=2)
@@ -12,3 +12,6 @@ seq = debruijn.assemble_sequence_from_reads(reads, k=3)
 seq_expected = "TACGGTACGACCCCGGGTTTT"
 print(seq)
 assert seq == seq_expected
+
+contigs = contig_assembly.assemble_contigs_from_reads(reads, k=4)
+print(contigs)
