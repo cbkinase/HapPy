@@ -43,3 +43,7 @@ Similar to MFR, but attempts to explain the observed fragments with the least nu
 
 #### Minimum Error Correction (MEC)
 The most commonly used. In MEC, the goal is to find the two haplotypes that require the smallest number of corrections to the given fragments to eliminate all inconsistencies. MEC is an NP-hard problem, however, and generally requires heuristic solutions.
+
+## Disclaimer
+
+Please note that HapPy was written purely for educational purposes. It is not intended to be a fully-optimized or production-ready solution for haplotype assembly or other genetic sequencing tasks. The author makes no guarantees as to the accuracy, reliability, or completeness of the content herein. HapPy should absolutely not be used for any medical, diagnostic, or experimental procedures.
